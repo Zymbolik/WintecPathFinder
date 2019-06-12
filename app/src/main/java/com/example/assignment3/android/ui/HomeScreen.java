@@ -1,4 +1,4 @@
-package com.example.assignment3.activities;
+package com.example.assignment3.android.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

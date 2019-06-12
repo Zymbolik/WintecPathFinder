@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.HomeScreen"></activity>
-        <activity android:name=".activities.SplashScreen">
+        <activity android:name=".android.ui.HomeScreen"></activity>
+        <activity android:name=".android.ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.FirstScreen" />
+        <activity android:name=".android.ui.FirstScreen" />
     </application>
 
 </manifest>

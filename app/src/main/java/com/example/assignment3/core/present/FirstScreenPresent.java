@@ -1,8 +1,8 @@
-package com.example.assignment3.present;
+package com.example.assignment3.core.present;
 
-import com.example.assignment3.contracts.FirstScreenContract;
-import com.example.assignment3.contracts.FirstScreenContract.View;
-import com.example.assignment3.repo.PreferenceRepository;
+import com.example.assignment3.core.contracts.FirstScreenContract;
+import com.example.assignment3.core.contracts.FirstScreenContract.View;
+import com.example.assignment3.core.repo.PreferenceRepository;
 
 import static java.util.Objects.requireNonNull;
 

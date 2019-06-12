@@ -3,7 +3,7 @@ package com.example.assignment3.android;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.assignment3.repo.PreferenceRepository;
+import com.example.assignment3.core.repo.PreferenceRepository;
 
 import java8.util.Optional;
 

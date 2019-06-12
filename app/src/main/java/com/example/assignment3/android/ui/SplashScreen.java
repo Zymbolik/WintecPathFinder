@@ -1,4 +1,4 @@
-package com.example.assignment3.activities;
+package com.example.assignment3.android.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

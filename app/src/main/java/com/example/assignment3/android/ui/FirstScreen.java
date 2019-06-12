@@ -1,4 +1,4 @@
-package com.example.assignment3.activities;
+package com.example.assignment3.android.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import com.example.assignment3.R;
 import com.example.assignment3.android.AndroidPreferenceRepository;
-import com.example.assignment3.contracts.FirstScreenContract;
-import com.example.assignment3.present.FirstScreenPresent;
-import com.example.assignment3.repo.PreferenceRepository;
+import com.example.assignment3.core.contracts.FirstScreenContract;
+import com.example.assignment3.core.present.FirstScreenPresent;
+import com.example.assignment3.core.repo.PreferenceRepository;
 
 public class FirstScreen extends AppCompatActivity implements FirstScreenContract.View {
 

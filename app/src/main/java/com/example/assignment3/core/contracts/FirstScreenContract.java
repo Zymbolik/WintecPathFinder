@@ -1,4 +1,4 @@
-package com.example.assignment3.contracts;
+package com.example.assignment3.core.contracts;
 
 /**
  * A contract to define a view and
