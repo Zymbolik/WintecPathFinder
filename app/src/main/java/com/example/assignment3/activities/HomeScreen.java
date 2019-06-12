@@ -1,7 +1,9 @@
-package com.example.assignment3;
+package com.example.assignment3.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.assignment3.R;
 
 public class HomeScreen extends AppCompatActivity {
 

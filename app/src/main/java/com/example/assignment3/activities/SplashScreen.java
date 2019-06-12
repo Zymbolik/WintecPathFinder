@@ -1,8 +1,10 @@
-package com.example.assignment3;
+package com.example.assignment3.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.assignment3.R;
 
 public class SplashScreen extends AppCompatActivity {
 
