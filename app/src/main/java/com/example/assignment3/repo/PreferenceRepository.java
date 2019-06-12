@@ -3,8 +3,7 @@ package com.example.assignment3.repo;
 import java8.util.Optional;
 
 /**
- * Definition of a repository to access preference
- * values.
+ * Definition of a repository to access preferences.
  */
 public interface PreferenceRepository {
 

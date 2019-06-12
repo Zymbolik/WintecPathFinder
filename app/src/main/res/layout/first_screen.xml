@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"
+    tools:context=".activities.FirstScreen"
     android:orientation="vertical">
 
     <TextView
@@ -15,14 +15,32 @@
         android:textSize="30sp"
         tools:text="Enter your Name" />
 
-
     <EditText
-        android:id="@+id/UserNameInput"
+        android:id="@+id/fs_editName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/fs_textDisclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <CheckBox
+            android:id="@+id/fs_checkDisclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/UserNameButton"
+        android:id="@+id/fs_submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
