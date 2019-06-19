@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.example.assignment3.ui.SplashScreen;
@@ -83,5 +84,15 @@ public class HomeScreen extends AppCompatActivity {
 
             }
         }).start();
+    }
+
+    public void hideToolBar()
+    {
+        findViewById(R.id.toolbar).setVisibility(View.INVISIBLE);
+    }
+
+    public void showToolBar()
+    {
+        findViewById(R.id.toolbar).setVisibility(View.VISIBLE);
     }
 }
