@@ -11,6 +11,10 @@ public interface SearchContract {
         void displayResults(List<Module> modules);
 
         void displayNoResults();
+
+        void showLoading();
+
+        void hideLoading();
     }
 
     interface Present {

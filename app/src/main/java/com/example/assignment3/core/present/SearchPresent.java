@@ -7,9 +7,15 @@ import com.example.assignment3.repo.ModuleRepo;
 
 import java.util.List;
 
+import io.reactivex.Single;
+
 public class SearchPresent implements SearchContract.Present {
 
     private ModuleRepo repo;
+
+    public SearchPresent(ModuleRepo repo) {
+        this.repo = repo;
+    }
 
     @Override
     public void initialize(View view) {
@@ -18,21 +24,26 @@ public class SearchPresent implements SearchContract.Present {
 
     @Override
     public void searchByProgramme(View view, String programme) {
-        List<Module> modules = repo.getProgrammeModules(programme);
-        displayResults(view, modules);
+        view.showLoading();
+        Single.fromCallable(() -> repo.getProgrammeModules(programme))
+                .subscribe(modules -> displayResults(view, modules))
+                .dispose();
     }
 
     @Override
     public void searchBySpecialization(View view, String specialization) {
-        List<Module> modules = repo.getSpecializationModules(specialization);
-        displayResults(view, modules);
+        view.showLoading();
+        Single.fromCallable(() -> repo.getSpecializationModules(specialization))
+                .subscribe(modules -> displayResults(view, modules))
+                .dispose();
     }
 
     @Override
     public void searchByYear(View view, String year) {
         int intYear = Integer.parseInt(year);
-        List<Module> modules = repo.getYearModules(intYear);
-        displayResults(view, modules);
+        Single.fromCallable(() -> repo.getYearModules(intYear))
+                .subscribe(modules -> displayResults(view, modules))
+                .dispose();
     }
 
     /**
@@ -41,6 +52,7 @@ public class SearchPresent implements SearchContract.Present {
      * @param results the results to display.
      */
     private void displayResults(View view, List<Module> results) {
+        view.hideLoading();
         if (results.isEmpty())
             view.displayNoResults();
         else
