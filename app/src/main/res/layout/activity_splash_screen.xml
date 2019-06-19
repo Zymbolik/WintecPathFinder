@@ -8,6 +8,28 @@
     tools:context=".ui.SplashScreen"
     android:background="#ffdd00">
 
+    <RelativeLayout
+        android:id="@+id/splash_background_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp">
+
+        <View
+            android:layout_width="450dp"
+            android:layout_height="450dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="-120dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="#e5ce3d"
+            android:background="@drawable/wintec_logo_pure"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/text_title"
         android:layout_width="wrap_content"
@@ -30,15 +52,52 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/sourcesanspro_regular"
-        android:lineSpacingExtra="-10dp"
-        android:singleLine="false"
         android:text="Ready to start studying now?"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
+    <TextView
+        android:id="@+id/text_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/sourcesanspro_semibold"
+        android:text="Prototype version. Please do not use as an official study plan."
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/splash_reg_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+
+    <View
+        android:id="@+id/splash_reg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle_theme_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/wintec_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/splash_reg_bottom" />
 
 
 </android.support.constraint.ConstraintLayout>
