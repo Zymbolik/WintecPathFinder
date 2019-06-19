@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.assignment3.MainActivity;
 import com.example.assignment3.R;
+import com.example.assignment3.SetupScreen;
 
 public class SplashScreen extends Fragment {
 
@@ -32,5 +33,14 @@ public class SplashScreen extends Fragment {
         instance = view;
 
         MainActivity.instance.hideToolBar();
+
+        new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+
+                MainActivity.instance.changePage(new SetupScreen());
+            } catch (InterruptedException e) {  }
+
+        }).start();
     }
 }
