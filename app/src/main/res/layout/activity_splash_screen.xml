@@ -8,5 +8,37 @@
     tools:context=".ui.SplashScreen"
     android:background="#ffdd00">
 
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:singleLine="false"
+        android:fontFamily="@font/sourcesanspro_bold"
+        android:lineSpacingExtra="-10dp"
+        android:text="Degree\nProgramme\nMapper."
+        android:textColor="#000000"
+        android:textSize="45sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:lineSpacingExtra="-10dp"
+        android:singleLine="false"
+        android:text="Ready to start studying now?"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+
+
 
 </android.support.constraint.ConstraintLayout>
