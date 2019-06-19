@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.assignment3.MainActivity;
 import com.example.assignment3.R;
 
 public class SplashScreen extends Fragment {
@@ -29,5 +30,7 @@ public class SplashScreen extends Fragment {
             //Things you need to do when the first time load this page
         }
         instance = view;
+
+        MainActivity.instance.hideToolBar();
     }
 }
