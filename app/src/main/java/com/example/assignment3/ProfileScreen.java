@@ -33,7 +33,7 @@ public class ProfileScreen extends Fragment implements ProfileContract.View {
         super.onViewCreated(view, savedInstanceState);
 
         // setup ui components.
-        textFirstName = view.findViewById(R.id.first_name_title);
+        textFirstName = view.findViewById(R.id.UsernameTitle);
 
         // setup ui actions.
 
