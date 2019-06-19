@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.assignment3.MainActivity;
 import com.example.assignment3.R;
 
 public class SplashScreen extends Fragment {
@@ -31,6 +30,5 @@ public class SplashScreen extends Fragment {
         }
         instance = view;
 
-        MainActivity.instance.hideToolBar();
     }
 }

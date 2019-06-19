@@ -16,28 +16,24 @@ public class FirstScreenPresent implements FirstScreenContract.Present {
 
     @Override
     public void initialize(View view) {
-        if(preference.loadUsername().isPresent()) {
+        if(preference.loadFirstName().isPresent())
             view.displayHomeScreen();
-        }
-        else {
-            view.disableSubmit();
-
-            // FIXME load disclaimer from file
-            view.displayDisclaimer("This is a disclaimer");
-        }
-    }
-
-    @Override
-    public void disclaimerAccepted(View view, boolean isAccepted) {
-        if(isAccepted)
-            view.enableSubmit();
         else
             view.disableSubmit();
     }
 
     @Override
-    public void onSubmit(View view, String name) {
-        preference.saveUsername(name);
+    public void onFirstNameCheck(View view, String firstName) {
+        if(firstName == null || firstName.isEmpty())
+            view.disableSubmit();
+        else
+            view.enableSubmit();
+    }
+
+    @Override
+    public void onSubmit(View view, String firstName, String lastName) {
+        preference.saveFirstName(firstName);
+        preference.saveLastName(lastName);
         view.displayHomeScreen();
     }
 }

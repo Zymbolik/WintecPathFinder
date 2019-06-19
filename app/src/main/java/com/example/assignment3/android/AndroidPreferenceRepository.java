@@ -9,30 +9,41 @@ import java8.util.Optional;
 
 import static java8.util.Optional.ofNullable;
 
-/**
- * Implementation of the Android preference repository.
- */
 public class AndroidPreferenceRepository implements PreferenceRepository {
 
-    final private static String PREFERENCE_NAME = "WintecPathFinder-Preferences";
-    final private static String USERNAME_KEY = "WintecPathFinder-Username";
+    final private static String PREFERENCES = "WintecPathfinder-Preferences";
+    final private static String FIRST_NAME = "First-Name";
+    final private static String LAST_NAME = "Last-Name";
 
     private SharedPreferences preference;
 
     public AndroidPreferenceRepository(Context androidContext) {
-        preference = androidContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+        preference = androidContext.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
     }
 
     @Override
-    public Optional<String> loadUsername() {
-        String username = preference.getString(USERNAME_KEY, null);
-        return ofNullable(username);
+    public Optional<String> loadFirstName() {
+        String firstName = preference.getString(FIRST_NAME, null);
+        return ofNullable(firstName);
     }
 
     @Override
-    public void saveUsername(String username) {
+    public Optional<String> loadLastName() {
+        String lastName = preference.getString(LAST_NAME, null);
+        return ofNullable(lastName);
+    }
+
+    @Override
+    public void saveFirstName(String firstName) {
         preference.edit()
-                .putString(USERNAME_KEY, username)
+                .putString(FIRST_NAME, firstName)
+                .apply();
+    }
+
+    @Override
+    public void saveLastName(String lastName) {
+        preference.edit()
+                .putString(LAST_NAME, lastName)
                 .apply();
     }
 }
