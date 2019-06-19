@@ -1,6 +1,6 @@
 package com.example.assignment3.core.contracts;
 
-public interface FirstScreenContract {
+public interface SetupContract {
 
     interface View {
 
@@ -11,7 +11,7 @@ public interface FirstScreenContract {
         void displayHomeScreen();
     }
 
-    interface Present {
+    interface Presenter {
 
         void initialize(View view);
 

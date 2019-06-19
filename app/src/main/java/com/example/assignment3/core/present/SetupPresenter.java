@@ -1,16 +1,16 @@
 package com.example.assignment3.core.present;
 
-import com.example.assignment3.core.contracts.FirstScreenContract;
-import com.example.assignment3.core.contracts.FirstScreenContract.View;
+import com.example.assignment3.core.contracts.SetupContract.Presenter;
+import com.example.assignment3.core.contracts.SetupContract.View;
 import com.example.assignment3.core.repo.PreferenceRepository;
 
 import static java.util.Objects.requireNonNull;
 
-public class FirstScreenPresent implements FirstScreenContract.Present {
+public class SetupPresenter implements Presenter {
 
     private PreferenceRepository preference;
 
-    public FirstScreenPresent(PreferenceRepository preference) {
+    public SetupPresenter(PreferenceRepository preference) {
         this.preference = requireNonNull(preference);
     }
 
