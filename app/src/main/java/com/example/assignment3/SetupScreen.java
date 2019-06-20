@@ -1,9 +1,14 @@
 package com.example.assignment3;
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -13,7 +18,7 @@ import com.example.assignment3.core.contracts.SetupContract;
 import com.example.assignment3.core.contracts.SetupContract.Presenter;
 import com.example.assignment3.core.present.SetupPresenter;
 
-public class SetupScreen extends AppCompatActivity implements SetupContract.View {
+public class SetupScreen extends Fragment implements SetupContract.View {
 
     private EditText editFirstName;
     private EditText editLastName;
@@ -21,15 +26,20 @@ public class SetupScreen extends AppCompatActivity implements SetupContract.View
 
     private Presenter presenter;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_setup);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Defines the xml file for the fragment
+        return inflater.inflate(R.layout.layout_setup, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         // initializing components.
-        editFirstName = findViewById(R.id.first_name_edit_text);
-        editLastName = findViewById(R.id.last_name_edit_text);
-        btnNext = findViewById(R.id.nextButton);
+        editFirstName = view.findViewById(R.id.first_name_edit_text);
+        editLastName =  view.findViewById(R.id.last_name_edit_text);
+        btnNext =  view.findViewById(R.id.nextButton);
 
         // setting up actions.
         btnNext.setOnClickListener(ignored -> doOnSubmit());
@@ -44,9 +54,10 @@ public class SetupScreen extends AppCompatActivity implements SetupContract.View
         });
 
         // initializing presenter.
-        presenter = new SetupPresenter(new AndroidPreferenceRepository(this));
+        presenter = new SetupPresenter(new AndroidPreferenceRepository(MainActivity.instance));
         presenter.initialize(this);
     }
+
 
     @Override
     public void enableSubmit() {
@@ -60,7 +71,7 @@ public class SetupScreen extends AppCompatActivity implements SetupContract.View
 
     @Override
     public void displayHomeScreen() {
-        Toast.makeText(this, "Moving to next screen!", Toast.LENGTH_SHORT).show();
+        MainActivity.instance.changePage(new ProfileScreen());
     }
 
     private void doFirstNameCheck(String firstName) {
