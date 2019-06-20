@@ -1,148 +1,58 @@
-moduleName,moduleCode,moduleCredits,year,semester,specialisation,program,prerequisite1/prerequisite2/prerequisite3/corerequisite = 8 columns
-
----------------
-Year 1 Modules
----------------
-
-(Compulsory Courses)
 IT Operations,COMP501,15,Y1,S1,None,NZ Certificate in IT L5,None
 Fundamentals of Programming and Problem Solving,COMP502,15,Y1,S1,None,NZ Certificate in IT L5,None
 Professional Practice,INFO501,15,Y1,S1,None,NZ Certificate in IT L5,None
 Business Sytems Analysis & Design,INFO502,15,Y1,S1,None,NZ Certificate in IT L5,None
-
-(Compulsory Courses)
 Introduction of Network,COMP503,15,Y1,S2,None,Diploma of IT & Tech Support L5,None
 Operating Systems & Systems Support,COMP504,15,Y1,S2,None,Diploma of IT & Tech Support L5,None
 Database Principle,INFO503,15,Y1,S2,None,Diploma of IT & Tech Support L5,None
 Technical Support,INFO504,15,Y1,S2,None,Diploma of IT & Tech Support L5,None
-
-Introduction of Network(Cisco 1)
-
----------------
-Year 2 Modules
----------------
---------------------------------
-Semester 3 - Compulsory Courses
---------------------------------
-
-(UPDATED) 
 Object Oriented Programming,COMP601,15,Y2,S3,None,Bachelor of Applied IT,COMP502
-Data-modelling and SQL,INFO601,15,Y2,S3,None,Bachelor of Applied IT,Prereq-INFO503
+Data-modelling and SQL,INFO601,15,Y2,S3,None,Bachelor of Applied IT,INFO503
 Mathematics for IT,MATH601,15,Y2,S3,None,Bachelor of Applied IT,None
-Web Development,COMP602,15,Y2,S3,None,Bachelor of Applied IT,Prereq-COMP502/Prereq-INFO502
-
------------------------------------
-Semester 4 - Specialisation Courses
------------------------------------
-
-Business Interpesonal Communication & Technical Writing - Compulsory Class
-
-Network Engineering Specialisation
-
-(UPDATED)
+Web Development,COMP602,15,Y2,S3,None,Bachelor of Applied IT,COMP502/INFO502
 Business Interpersonal Communication & Technical Writing,INFO602,15,Y2,S4,None,Bachelor of Applied IT,None
 Data Centre Infrastructure,COMP615,15,Y2,S4,Network Engineering,Bachelor of Applied IT,None
 System Administration,INFO603,15,Y2,S4,Network Engineering,Bachelor of Applied IT,None
-Routing and Switching Essentials,COMP604,15,Y2,S4,Network Engineering, Bachelor of Applied IT,Prereq-INFO503
-
-Software Engineering Specialisation
-
-(UPDATED)
-Business Interpersonal Communications & Technical Writing,INFO602,15,Y2,S4,None,Bachelor of Applied IT,None
+Routing and Switching Essentials,COMP604,15,Y2,S4,Network Engineering, Bachelor of Applied IT,INFO503
 Data Structures and Algorithms,COMP605,15,Y2,S4,Software Engineering,Bachelor of Applied IT,None
-Application Development,COMP609,15,Y2,S4,Software Engineering,Bachelor of Applied IT,Prereq-COMP601/Prereq-MATH601
-Mathematics for Programming,MATH602,15,Y2,S4,Software Engineering,Bachelor of Applied IT,Prereq-MATH601
-
-Database Architecture Specialisation
-
-(UPDATED)
-Business Interpersonal Communications & Technical Writing,INFO602,15,Y2,S4,None,Bachelor of Applied IT,None
-Data Structures and Algorithms,COMP605,15,Y2,S4,Database Architecture,Bachelor of Applied IT,Prereq-COMP601/Prereq-MATH601
-Web Programming,COMP606,15,Y2,S4,Database Architecture,Bachelor of Applied IT,Prereq-COMP602
-Database Systems,INFO604,15,Y2,S4,Database Architecture,Bachelor of Applied IT,Prereq-INFO503/Coreq-INFO601
-
-Multimedia and Web Development Specialisation
-
-(UPDATED)
-Business Interpersonal Communications & Technical Writing,INFO602,15,Y2,S4,None,Bachelor of Applied IT,None
-The Web Environment,COMP603,15,Y2,S4,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP602
-Web Programming,COMP606,15,Y2,S4,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP602
-Visual Effects and Animation,COMP607,15,Y2,S4,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP602
-
----------------
-Year 3 Modules
----------------
--------------------
-Semester 5 Modules
--------------------
-
-Network Engineering Specialisation
-
-(UPDATED)
-Advance Networking,COMP701,15,Y3,S5,Network Engineering,Bachelor of Applied IT,Prereq-INFO603
-Cyber-Security,INFO702,15,Y3,S5,Network Engineering,Bachelor of Applied IT,Prereq-COMP504/Prereq-INFO603
-Network Security,COMP704,15,Y3,S5,Network Engineering,Bachelor of Applied IT,Prereq-COMP604
-Scaling Networks,COMP702,15,Y3,S5,Network Engineering,Bachelor of Applied IT,Prereq-COMP604
-
-Software Engineering Specialisation
-
-(UPDATED)
+Application Development,COMP609,15,Y2,S4,Software Engineering,Bachelor of Applied IT,COMP601/MATH601
+Mathematics for Programming,MATH602,15,Y2,S4,Software Engineering,Bachelor of Applied IT,MATH601
+Data Structures and Algorithms,COMP605,15,Y2,S4,Database Architecture,Bachelor of Applied IT,COMP601/MATH601
+Web Programming,COMP606,15,Y2,S4,Database Architecture,Bachelor of Applied IT,COMP602
+Database Systems,INFO604,15,Y2,S4,Database Architecture,Bachelor of Applied IT,INFO503/INFO601
+The Web Environment,COMP603,15,Y2,S4,Multimedia and Web Development,Bachelor of Applied IT,COMP602
+Web Programming,COMP606,15,Y2,S4,Multimedia and Web Development,Bachelor of Applied IT,COMP602
+Visual Effects and Animation,COMP607,15,Y2,S4,Multimedia and Web Development,Bachelor of Applied IT,COMP602
+Advance Networking,COMP701,15,Y3,S5,Network Engineering,Bachelor of Applied IT,INFO603
+Cyber-Security,INFO702,15,Y3,S5,Network Engineering,Bachelor of Applied IT,COMP504/INFO603
+Network Security,COMP704,15,Y3,S5,Network Engineering,Bachelor of Applied IT,COMP604
+Scaling Networks,COMP702,15,Y3,S5,Network Engineering,Bachelor of Applied IT,COMP604
 Data-Warehousing and Business Intelligence,INFO704,15,Y3,S5,Software Engineering,Bachelor of Applied IT,None
-Principles of Software Testing,COMP707,15,Y3,S5,Software Engineering,Bachelor of Applied IT,Prereq-COMP605
-Mobile Application Development,COMP709,15,Y3,S5,Software Engineering,Bachelor of Applied IT,Prereq-COMP601/Prereq-COMP605/Prereq-MATH602
-Game Development,COMP706,15,Y3,S5,Software Engineering,Bachelor of Applied IT,Prereq-COMP601/Prereq-COMP605/Prereq-MATH602
-
-Database Architecture Specialisation
-
-(UPDATED)
+Principles of Software Testing,COMP707,15,Y3,S5,Software Engineering,Bachelor of Applied IT,COMP605
+Mobile Application Development,COMP709,15,Y3,S5,Software Engineering,Bachelor of Applied IT,COMP601/COMP605/MATH602
+Game Development,COMP706,15,Y3,S5,Software Engineering,Bachelor of Applied IT,COMP601/COMP605/MATH602
 Data-Warehousing and Business Intelligence,INFO704,15,Y3,S5,Database Architecture,Bachelor of Applied IT,None
-Database Front-End Applications,INFO706,15,Y3,S5,Database Architecture,Bachelor of Applied IT,Prereq-COMP601/Prereq-COMP604/Coreq-COMP709
-Mobile Applications Development,COMP709,15,Y3,S5,Database Architecture,Bachelor of Applied IT,Prereq-COMP601/Prereq-MATH601
-Cloud Server Databases,INFO707,15,Y3,S5,Database Architecture,Bachelor of Applied IT,Prereq-INFO601/Prereq-INFO604
-
-Multimedia and Web Development Specialisation
-
-(UPDATED)
-
+Database Front-End Applications,INFO706,15,Y3,S5,Database Architecture,Bachelor of Applied IT,COMP601/COMP604/COMP709
+Mobile Applications Development,COMP709,15,Y3,S5,Database Architecture,Bachelor of Applied IT,COMP601/MATH601
+Cloud Server Databases,INFO707,15,Y3,S5,Database Architecture,Bachelor of Applied IT,INFO601/INFO604
 Human Computer Interaction,INFO709,15,Y3,S5,Multimedia and Web Development,Bachelor of Applied IT,None
-Cyber-Security,INFO702,15,Y3,S5,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP504/Prereq-COMP601
-Mobile Application Development,COMP709,15,Y3,S5,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP601/Prereq-MATH601
-Web Application Development,COMP710,15,Y3,S5,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP602/Prereq-COMP606
-
-------------------
-Semester 6 Modules
-------------------
-
-Business Essentials for IT Professionals - Compulsory for every specialisation class
-
-Network Engineering Specialisation
-
-Business Essentials for IT Professionals,BIZM701,15,Y3,S6,None,Bachelor of Applied IT,Prereq-INFO602
-Connecting Networks,COMP705,15,Y3,S6,Network Engineering,Bachelor of Applied IT,Prereq-COMP702
-Network Engineering Project,COMP714,30,Y3,S6,Network Engineering,Bachelor of Applied IT,Prereq-COMP701/Prereq-COMP702/Prereq-COMP704
-Network Internship,INFO710,30,Y3,S6,Network Engineering,Bachelor of Applied IT,Prereq-COMP704
+Cyber-Security,INFO702,15,Y3,S5,Multimedia and Web Development,Bachelor of Applied IT,COMP504/COMP601
+Mobile Application Development,COMP709,15,Y3,S5,Multimedia and Web Development,Bachelor of Applied IT,COMP601/MATH601
+Web Application Development,COMP710,15,Y3,S5,Multimedia and Web Development,Bachelor of Applied IT,COMP602/COMP606
+Business Essentials for IT Professionals,BIZM701,15,Y3,S6,None,Bachelor of Applied IT,INFO602
+Connecting Networks,COMP705,15,Y3,S6,Network Engineering,Bachelor of Applied IT,COMP702
+Network Engineering Project,COMP714,30,Y3,S6,Network Engineering,Bachelor of Applied IT,COMP701/COMP702/COMP704
+Network Internship,INFO710,30,Y3,S6,Network Engineering,Bachelor of Applied IT,COMP704
 Design Factory,DFNZ701,30,Network Engineering,Bachelor of Applied IT,None
-
-Software Engineering Specialisation
-
-Business Essentials for IT Professionals,BIZM701,15,Y3,S6,None,Bachelor of Applied IT,Prereq-INFO602
-Big Data and Analytics,INFO703,15,Y3,S6,Software Engineering,Bachelor of Applied IT,Prereq-COMP605/Prereq-MATH602
-Software Engineering Project,COMP715,30,Y3,S6,Software Engineering,Bachelor of Applied IT,Prereq-COMP707
+Big Data and Analytics,INFO703,15,Y3,S6,Software Engineering,Bachelor of Applied IT,COMP605/MATH602
+Software Engineering Project,COMP715,30,Y3,S6,Software Engineering,Bachelor of Applied IT,COMP707
 Software Internship,INFO710,30,Y3,S6,Software Engineering,Bachelor of Applied IT,None
 Design Factory,DFNZ701,30,Software Engineering,Bachelor of Applied IT,None
-
-Database Architecture Specialisation
-
-Business Essentials for IT Professionals,BIZM701,15,Y3,S6,None,Bachelor of Applied IT,Prereq-INFO602
-Big Data and Analytics,INFO703,15,Y3,S6,Database Architecture,Bachelor of Applied IT,Prereq-COMP605/Prereq-MATH601
-Database Architecture Project,INFO712,30,Y3,S6,Database Architecture,Bachelor of Applied IT,Prereq-INFO707/Prereq-INFO704
-Database Internship,INFO710,30,Y3,S6,Database Architecture,Bachelor of Applied IT,Prereq-INFO706
+Big Data and Analytics,INFO703,15,Y3,S6,Database Architecture,Bachelor of Applied IT,COMP605/MATH601
+Database Architecture Project,INFO712,30,Y3,S6,Database Architecture,Bachelor of Applied IT,INFO707/INFO704
+Database Internship,INFO710,30,Y3,S6,Database Architecture,Bachelor of Applied IT,INFO706
 Design Factory,DFNZ701,30,Software Engineering,Bachelor of Applied IT,None
-
-Multimedia and Web Development Specialisation
-
-Business Essentials for IT Professionals,BIZM701,15,Y3,S6,None,Bachelor of Applied IT,Prereq-INFO602
-Data Visualisation,INFO708,15,Y3,S6,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP606/Prereq-COMP607
-Web Development Project,30,Y3,S6,Multimedia and Web Development,Bachelor of Applied IT,Prereq-COMP606/Prereq-COMP710
+Data Visualisation,INFO708,15,Y3,S6,Multimedia and Web Development,Bachelor of Applied IT,COMP606/COMP607
+Web Development Project,30,Y3,S6,Multimedia and Web Development,Bachelor of Applied IT,COMP606/COMP710
 Web Development Internship,30,Y3,S6,Multimedia and Web Development,Bachelor of Applied IT,None
 Design Factory,DFNZ701,30,Software Engineering,Bachelor of Applied IT,None

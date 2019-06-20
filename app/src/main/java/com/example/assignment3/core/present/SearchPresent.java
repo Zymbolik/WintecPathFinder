@@ -3,7 +3,7 @@ package com.example.assignment3.core.present;
 import com.example.assignment3.core.contracts.SearchContract;
 import com.example.assignment3.core.contracts.SearchContract.View;
 import com.example.assignment3.core.domain.Module;
-import com.example.assignment3.repo.ModuleRepo;
+import com.example.assignment3.core.repo.ModuleRepo;
 
 import java.util.List;
 

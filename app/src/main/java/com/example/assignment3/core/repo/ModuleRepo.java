@@ -1,4 +1,4 @@
-package com.example.assignment3.repo;
+package com.example.assignment3.core.repo;
 
 import com.example.assignment3.core.domain.Module;
 
