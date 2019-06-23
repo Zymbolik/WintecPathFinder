@@ -8,6 +8,8 @@ public interface Module {
 
     String getModuleCode();
 
+    int getLevel();
+
     int getCredits();
 
     int getYear();

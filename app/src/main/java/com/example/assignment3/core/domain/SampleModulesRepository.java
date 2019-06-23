@@ -1,6 +1,6 @@
 package com.example.assignment3.core.domain;
 
-import com.example.assignment3.core.repo.ModuleRepo;
+import com.example.assignment3.core.repo.ModulesRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import static java.lang.Integer.parseInt;
 import static java8.util.stream.Collectors.toList;
 import static java8.util.stream.StreamSupport.stream;
 
-public class SampleModulesRepository implements ModuleRepo {
+public class SampleModulesRepository implements ModulesRepository {
 
     private Map<String, Module> modules;
 
@@ -71,7 +71,8 @@ public class SampleModulesRepository implements ModuleRepo {
                         .setSemester(parseInt(data[4]))
                         .setSpecializations(Lists.of(specializations))
                         .setProgramme(data[6])
-                        .setPrerequisites(resolvePrerequisites(prerequisites));
+                        .setPrerequisites(resolvePrerequisites(prerequisites))
+                        .setLevel(parseInt(data[8]));
 
                 destination.put(moduleCode, mb.build());
             }

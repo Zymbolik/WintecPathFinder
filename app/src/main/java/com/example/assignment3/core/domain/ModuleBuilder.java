@@ -6,6 +6,7 @@ public class ModuleBuilder {
 
     private String moduleName;
     private String moduleCode;
+    private int level;
     private int credits;
     private int year;
     private int semester;
@@ -22,6 +23,11 @@ public class ModuleBuilder {
 
     public ModuleBuilder setModuleCode(String moduleCode) {
         this.moduleCode = moduleCode;
+        return this;
+    }
+
+    public ModuleBuilder setLevel(int level) {
+        this.level = level;
         return this;
     }
 
@@ -59,6 +65,7 @@ public class ModuleBuilder {
         BuiltModule module = new BuiltModule();
         module.moduleName = moduleName;
         module.moduleCode = moduleCode;
+        module.level = level;
         module.credits = credits;
         module.year = year;
         module.semester = semester;
@@ -72,6 +79,7 @@ public class ModuleBuilder {
 
         private String moduleName;
         private String moduleCode;
+        private int level;
         private int credits;
         private int year;
         private int semester;
@@ -87,6 +95,11 @@ public class ModuleBuilder {
         @Override
         public String getModuleCode() {
             return moduleCode;
+        }
+
+        @Override
+        public int getLevel() {
+            return level;
         }
 
         @Override
