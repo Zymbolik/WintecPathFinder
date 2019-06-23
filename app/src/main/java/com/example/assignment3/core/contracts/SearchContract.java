@@ -17,7 +17,7 @@ public interface SearchContract {
         void hideLoading();
     }
 
-    interface Present {
+    interface Presenter {
 
         void initialize(View view);
 

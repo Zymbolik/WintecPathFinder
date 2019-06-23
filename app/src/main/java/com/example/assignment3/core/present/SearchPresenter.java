@@ -1,19 +1,19 @@
 package com.example.assignment3.core.present;
 
-import com.example.assignment3.core.contracts.SearchContract;
+import com.example.assignment3.core.contracts.SearchContract.Presenter;
 import com.example.assignment3.core.contracts.SearchContract.View;
 import com.example.assignment3.core.domain.Module;
-import com.example.assignment3.core.repo.ModuleRepo;
+import com.example.assignment3.core.repo.ModulesRepository;
 
 import java.util.List;
 
 import io.reactivex.Single;
 
-public class SearchPresent implements SearchContract.Present {
+public class SearchPresenter implements Presenter {
 
-    private ModuleRepo repo;
+    private ModulesRepository repo;
 
-    public SearchPresent(ModuleRepo repo) {
+    public SearchPresenter(ModulesRepository repo) {
         this.repo = repo;
     }
 
