@@ -40,7 +40,9 @@ public class SearchPresenter implements Presenter {
 
     @Override
     public void searchByYear(View view, String year) {
-        int intYear = Integer.parseInt(year);
+        view.showLoading();
+        String yr = year.replaceAll("\\D+", "");
+        int intYear = Integer.parseInt(yr);
         Single.fromCallable(() -> repo.getYearModules(intYear))
                 .subscribe(modules -> displayResults(view, modules))
                 .dispose();
