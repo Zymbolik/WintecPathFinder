@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.assignment3.android.AndroidPreferenceRepository;
 import com.example.assignment3.core.contracts.SetupContract;
@@ -28,15 +27,14 @@ public class SetupScreen extends Fragment implements SetupContract.View {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Defines the xml file for the fragment
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.layout_setup, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        // initializing components.
+        // set up ui elements.
         editFirstName = view.findViewById(R.id.first_name_edit_text);
         editLastName =  view.findViewById(R.id.last_name_edit_text);
         btnNext =  view.findViewById(R.id.nextButton);
@@ -71,7 +69,7 @@ public class SetupScreen extends Fragment implements SetupContract.View {
 
     @Override
     public void displayHomeScreen() {
-        MainActivity.instance.changePage(new ProfileScreen());
+        MainActivity.instance.changePage(new HomeScreen());
     }
 
     private void doFirstNameCheck(String firstName) {

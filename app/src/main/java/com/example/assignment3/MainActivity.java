@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.example.assignment3.ui.SplashScreen;
 
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             instance = this;
 
             //Go to the splash screen when opened
-            changePage(new HomeScreen());
+            changePage(new SplashScreen());
 
             return;
         }

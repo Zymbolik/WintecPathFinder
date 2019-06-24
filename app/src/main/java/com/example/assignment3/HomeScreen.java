@@ -42,6 +42,7 @@ public class HomeScreen extends Fragment implements HomeContract.View {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         // setup ui components.
         textUsername = view.findViewById(R.id.hs_username);
         textHeading = view.findViewById(R.id.hs_heading_message);
@@ -51,6 +52,7 @@ public class HomeScreen extends Fragment implements HomeContract.View {
 
         // setup presenter.
         try {
+            MainActivity.instance.showToolBar();
             PreferenceRepository prefsRepo = new AndroidPreferenceRepository(getContext());
             ModulesRepository modulesRepo = new SampleModulesRepository(getActivity().getAssets().open("Modules.txt"));
             presenter = new HomePresenter(prefsRepo, modulesRepo);
