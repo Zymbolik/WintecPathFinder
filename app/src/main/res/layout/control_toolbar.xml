@@ -21,7 +21,6 @@
         android:layout_height="60dp"
         android:background="@null"
         android:src="@drawable/wintec_logo_pure"
-        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/tb_btn_search"
         app:layout_constraintEnd_toStartOf="@id/tb_btn_profile" />

@@ -18,6 +18,7 @@ import com.example.assignment3.ProfileScreen;
 import com.example.assignment3.R;
 import com.example.assignment3.core.contracts.ToolbarContract;
 import com.example.assignment3.core.present.ToolbarPresenter;
+import com.example.assignment3.ui.SearchScreen;
 
 public class ToolBar extends Fragment implements ToolbarContract.View {
 
@@ -64,7 +65,7 @@ public class ToolBar extends Fragment implements ToolbarContract.View {
 
     @Override
     public void displaySearch() {
-        Toast.makeText(getContext(), "Search screen displayed!", Toast.LENGTH_SHORT).show();
+        MainActivity.instance.changePage(new SearchScreen());
     }
 
     @Override
