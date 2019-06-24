@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="programmes">
+        <item>Certificate in IT</item>
+        <item>Diploma of IT</item>
+        <item>Bachelor of Applied IT</item>
+    </array>
+
+    <array name="years">
+        <item>Y1</item>
+        <item>Y2</item>
+        <item>Y3</item>
+    </array>
+
+    <array name="specializations">
+        <item>Software Engineering</item>
+        <item>Network Engineering</item>
+        <item>Web Development</item>
+        <item>Database Architecture</item>
+    </array>
+
+</resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffdd00"
-    tools:context=".SearchScreen">
+    tools:context=".ui.SearchScreen">
 
     <TextView
         android:id="@+id/search_title"
@@ -29,15 +29,65 @@
         app:layout_constraintTop_toBottomOf="@+id/search_title" />
 
     <TextView
+        android:id="@+id/search_program"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:fontFamily="@font/sourcesanspro_regular"
-        android:text="Program"
+        android:text="Program: "
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_menu" />
+
+    <TextView
+        android:id="@+id/search_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="Year: "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_program" />
+
+    <TextView
+        android:id="@+id/search_spec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:text="Specialization: "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_year" />
+
+    <Spinner
+        android:id="@+id/ss_program_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/search_program"
+        app:layout_constraintTop_toBottomOf="@+id/search_menu" />
+
+    <Spinner
+        android:id="@+id/ss_year_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        app:layout_constraintStart_toStartOf="@+id/ss_program_spinner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/ss_spec_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="@+id/ss_year_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/ss_program_spinner" />
 
 
 </android.support.constraint.ConstraintLayout>
