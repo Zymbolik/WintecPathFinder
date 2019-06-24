@@ -14,6 +14,7 @@ import com.example.assignment3.R;
 import com.example.assignment3.core.contracts.ModuleContract;
 
 import static java8.util.Objects.requireNonNull;
+import static java8.util.Optional.ofNullable;
 
 public class CourseCard extends Fragment implements ModuleContract.View {
 
@@ -48,7 +49,7 @@ public class CourseCard extends Fragment implements ModuleContract.View {
             expanded = !expanded;
         });
 
-        presenter.initialize(this);
+        ofNullable(presenter).ifPresent(p -> p.initialize(this));
     }
 
     @Override

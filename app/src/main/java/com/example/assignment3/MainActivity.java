@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             instance = this;
 
             //Go to the splash screen when opened
-            changePage(new SplashScreen());
+            changePage(new HomeScreen());
 
             return;
         }
