@@ -44,7 +44,7 @@ public class HomeScreen extends Fragment implements HomeContract.View {
         super.onViewCreated(view, savedInstanceState);
 
         // setup ui components.
-        textUsername = view.findViewById(R.id.hs_username);
+        textUsername = view.findViewById(R.id.hs_title_message);
         textHeading = view.findViewById(R.id.hs_heading_message);
         layoutModules = view.findViewById(R.id.hs_modules);
 
@@ -65,7 +65,7 @@ public class HomeScreen extends Fragment implements HomeContract.View {
 
     @Override
     public void displayUsername(String username) {
-        textUsername.setText(username);
+        textUsername.setText("Hello, \n" + username + ".");
     }
 
     @Override

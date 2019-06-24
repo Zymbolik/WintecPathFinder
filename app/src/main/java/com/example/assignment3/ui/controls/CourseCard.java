@@ -64,6 +64,12 @@ public class CourseCard extends Fragment implements ModuleContract.View {
 
     @Override
     public void displayModuleName(String moduleName) {
+
+        if(moduleName.length() > 35)
+        {
+            moduleName = moduleName.substring(0, 30);
+            moduleName += "...";
+        }
         textModuleName.setText(moduleName);
     }
 

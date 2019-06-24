@@ -8,28 +8,19 @@
     tools:context=".HomeScreen">
 
     <TextView
-        android:id="@+id/hs_greeting"
+        android:id="@+id/hs_title_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:singleLine="false"
         android:fontFamily="@font/sourcesanspro_bold"
-        android:text="Hello,"
+        android:lineSpacingExtra="-10dp"
+        android:text="Hello,\nUsername."
         android:textColor="#000000"
         android:textSize="45sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/hs_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sourcesanspro_bold"
-        android:text="Username."
-        android:textColor="#000000"
-        android:textSize="45sp"
-        app:layout_constraintStart_toStartOf="@+id/hs_greeting"
-        app:layout_constraintTop_toBottomOf="@id/hs_greeting" />
 
     <TextView
         android:id="@+id/hs_heading_message"
@@ -40,13 +31,16 @@
         android:text="Looks like you have no modules."
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/hs_username"
-        app:layout_constraintTop_toBottomOf="@+id/hs_username" />
+        app:layout_constraintStart_toStartOf="@+id/hs_title_message"
+        app:layout_constraintTop_toBottomOf="@+id/hs_title_message" />
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hs_heading_message">
