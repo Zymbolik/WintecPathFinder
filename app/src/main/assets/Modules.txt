@@ -2,44 +2,44 @@ IT Operations,COMP501,15,1,1,None,NZ Certificate in IT,None,5
 Fundamentals of Programming and Problem Solving,COMP502,15,1,1,None,NZ Certificate in IT,None,5
 Professional Practice,INFO501,15,1,1,None,NZ Certificate in IT,None,5
 Business Sytems Analysis & Design,INFO502,15,1,1,None,NZ Certificate in IT,None,5
-Introduction of Network,COMP503,15,1,2,None,Diploma of IT & Tech Support,None,5
-Operating Systems & Systems Support,COMP504,15,1,2,None,Diploma of IT & Tech Support,None,5
-Database Principle,INFO503,15,1,2,None,Diploma of IT & Tech Support,None,5
-Technical Support,INFO504,15,1,2,None,Diploma of IT & Tech Support,None,5
+Introduction of Network,COMP503,15,1,2,None,Diploma of IT and Tech Support,None,5
+Operating Systems & Systems Support,COMP504,15,1,2,None,Diploma of IT and Tech Support,None,5
+Database Principle,INFO503,15,1,2,None,Diploma of IT and Tech Support,None,5
+Technical Support,INFO504,15,1,2,None,Diploma of IT and Tech Support,None,5
 Object Oriented Programming,COMP601,15,2,3,None,Bachelor of Applied IT,COMP502,6
 Data-modelling and SQL,INFO601,15,2,3,None,Bachelor of Applied IT,INFO503,6
 Mathematics for IT,MATH601,15,2,3,None,Bachelor of Applied IT,None,6
 Web Development,COMP602,15,2,3,None,Bachelor of Applied IT,COMP502/INFO502,6
 Business Interpersonal Communication & Technical Writing,INFO602,15,2,4,None,Bachelor of Applied IT,None,6
-Data Centre Infrastructure,COMP615,15,2,4,NE,Bachelor of Applied IT,None,6
-System Administration,INFO603,15,2,4,NE,Bachelor of Applied IT,None,6
-Routing and Switching Essentials,COMP604,15,2,4,NE, Bachelor of Applied IT,INFO503,6
-Application Development,COMP609,15,2,4,SE,Bachelor of Applied IT,COMP601/MATH601,6
-Mathematics for Programming,MATH602,15,2,4,SE,Bachelor of Applied IT,MATH601,6
-Data Structures and Algorithms,COMP605,15,2,4,SE/DA,Bachelor of Applied IT,COMP601/MATH601,6
-Web Programming,COMP606,15,2,4,DA/WD,Bachelor of Applied IT,COMP602,6
-Database Systems,INFO604,15,2,4,DA,Bachelor of Applied IT,INFO503/INFO601,6
-The Web Environment,COMP603,15,2,4,WD,Bachelor of Applied IT,COMP602,6
-Visual Effects and Animation,COMP607,15,2,4,WD,Bachelor of Applied IT,COMP602,6
-Advance Networking,COMP701,15,3,5,NE,Bachelor of Applied IT,INFO603,7
-Network Security,COMP704,15,3,5,NE,Bachelor of Applied IT,COMP604,7
-Scaling Networks,COMP702,15,3,5,NE,Bachelor of Applied IT,COMP604,7
-Principles of Software Testing,COMP707,15,3,5,SE,Bachelor of Applied IT,COMP605,7
-Game Development,COMP706,15,3,5,SE,Bachelor of Applied IT,COMP601/COMP605/MATH602,7
-Data-Warehousing and Business Intelligence,INFO704,15,3,5,DA/SE,Bachelor of Applied IT,None,7
-Database Front-End Applications,INFO706,15,3,5,DA,Bachelor of Applied IT,COMP601/COMP604/COMP709,7
-Cloud Server Databases,INFO707,15,3,5,DA,Bachelor of Applied IT,INFO601/INFO604,7
-Human Computer Interaction,INFO709,15,3,5,WD,Bachelor of Applied IT,None,7
-Cyber-Security,INFO702,15,3,5,NE/WD,Bachelor of Applied IT,COMP504/COMP601,7
-Mobile Application Development,COMP709,15,3,5,DA/SE/WD,Bachelor of Applied IT,COMP601/MATH601,7
-Web Application Development,COMP710,15,3,5,WD,Bachelor of Applied IT,COMP602/COMP606,7
+Data Centre Infrastructure,COMP615,15,2,4,Network Engineering,Bachelor of Applied IT,None,6
+System Administration,INFO603,15,2,4,Network Engineering,Bachelor of Applied IT,None,6
+Routing and Switching Essentials,COMP604,15,2,4,Network Engineering, Bachelor of Applied IT,INFO503,6
+Application Development,COMP609,15,2,4,Software Engineering,Bachelor of Applied IT,COMP601/MATH601,6
+Mathematics for Programming,MATH602,15,2,4,Software Engineering,Bachelor of Applied IT,MATH601,6
+Data Structures and Algorithms,COMP605,15,2,4,Software Engineering/Database Architecture,Bachelor of Applied IT,COMP601/MATH601,6
+Web Programming,COMP606,15,2,4,Database Architecture/Web Development,Bachelor of Applied IT,COMP602,6
+Database Systems,INFO604,15,2,4,Database Architecture,Bachelor of Applied IT,INFO503/INFO601,6
+The Web Environment,COMP603,15,2,4,Web Development,Bachelor of Applied IT,COMP602,6
+Visual Effects and Animation,COMP607,15,2,4,Web Development,Bachelor of Applied IT,COMP602,6
+Advance Networking,COMP701,15,3,5,Network Engineering,Bachelor of Applied IT,INFO603,7
+Network Security,COMP704,15,3,5,Network Engineering,Bachelor of Applied IT,COMP604,7
+Scaling Networks,COMP702,15,3,5,Network Engineering,Bachelor of Applied IT,COMP604,7
+Principles of Software Testing,COMP707,15,3,5,Software Engineering,Bachelor of Applied IT,COMP605,7
+Game Development,COMP706,15,3,5,Software Engineering,Bachelor of Applied IT,COMP601/COMP605/MATH602,7
+Data-Warehousing and Business Intelligence,INFO704,15,3,5,Database Architecture/Software Engineering,Bachelor of Applied IT,None,7
+Database Front-End Applications,INFO706,15,3,5,Database Architecture,Bachelor of Applied IT,COMP601/COMP604/COMP709,7
+Cloud Server Databases,INFO707,15,3,5,Database Architecture,Bachelor of Applied IT,INFO601/INFO604,7
+Human Computer Interaction,INFO709,15,3,5,Web Development,Bachelor of Applied IT,None,7
+Cyber-Security,INFO702,15,3,5,Network Engineering/Web Development,Bachelor of Applied IT,COMP504/COMP601,7
+Mobile Application Development,COMP709,15,3,5,Database Architecture/Software Engineering/Web Development,Bachelor of Applied IT,COMP601/MATH601,7
+Web Application Development,COMP710,15,3,5,Web Development,Bachelor of Applied IT,COMP602/COMP606,7
 Business Essentials for IT Professionals,BIZM701,15,3,6,None,Bachelor of Applied IT,INFO602,7
-Connecting Networks,COMP705,15,3,6,NE,Bachelor of Applied IT,COMP702,7
-Big Data and Analytics,INFO703,15,3,6,SE/DA,Bachelor of Applied IT,COMP605/MATH602,7
-Data Visualisation,INFO708,15,3,6,WD,Bachelor of Applied IT,COMP606/COMP607,7
-Network Engineering Project,COMP714,30,3,6,NE,Bachelor of Applied IT,COMP701/COMP702/COMP704,7
-Software Engineering Project,COMP715,30,3,6,SE,Bachelor of Applied IT,COMP707,7
-Database Architecture Project,INFO712,30,3,6,DA,Bachelor of Applied IT,INFO707/INFO704,7
-Web Development Project,COMP713,30,3,6,WD,Bachelor of Applied IT,COMP606/COMP710,7
+Connecting Networks,COMP705,15,3,6,Network Engineering,Bachelor of Applied IT,COMP702,7
+Big Data and Analytics,INFO703,15,3,6,Software Engineering/Database Architecture,Bachelor of Applied IT,COMP605/MATH602,7
+Data Visualisation,INFO708,15,3,6,Web Development,Bachelor of Applied IT,COMP606/COMP607,7
+Network Engineering Project,COMP714,30,3,6,Network Engineering,Bachelor of Applied IT,COMP701/COMP702/COMP704,7
+Software Engineering Project,COMP715,30,3,6,Software Engineering,Bachelor of Applied IT,COMP707,7
+Database Architecture Project,INFO712,30,3,6,Database Architecture,Bachelor of Applied IT,INFO707/INFO704,7
+Web Development Project,COMP713,30,3,6,Web Development,Bachelor of Applied IT,COMP606/COMP710,7
 Design Factory,DFNZ701,30,3,6,None,Bachelor of Applied IT,None,7
 Internship,INFO710,30,3,6,None,Bachelor of Applied IT,None,7
