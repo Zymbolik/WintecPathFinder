@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="programmes">
-        <item>Certificate in IT</item>
-        <item>Diploma of IT</item>
+        <item>NZ Certificate in IT</item>
+        <item>Diploma of IT and Tech Support</item>
         <item>Bachelor of Applied IT</item>
     </array>
 
