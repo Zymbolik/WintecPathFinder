@@ -10,17 +10,13 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.assignment3.android.AndroidPreferenceRepository;
 import com.example.assignment3.core.contracts.HomeContract;
 import com.example.assignment3.core.domain.Module;
-import com.example.assignment3.core.domain.SampleModulesRepository;
 import com.example.assignment3.core.present.HomePresenter;
 import com.example.assignment3.core.present.ModulePresenter;
-import com.example.assignment3.core.repo.ModulesRepository;
-import com.example.assignment3.core.repo.PreferenceRepository;
+import com.example.assignment3.ui.SearchScreen;
 import com.example.assignment3.ui.controls.CourseCard;
 
-import java.io.IOException;
 import java.util.List;
 
 import static java8.util.stream.StreamSupport.stream;
@@ -51,16 +47,9 @@ public class HomeScreen extends Fragment implements HomeContract.View {
         // setup ui actions.
 
         // setup presenter.
-        try {
-            MainActivity.instance.showToolBar();
-            PreferenceRepository prefsRepo = new AndroidPreferenceRepository(getContext());
-            ModulesRepository modulesRepo = new SampleModulesRepository(getActivity().getAssets().open("Modules.txt"));
-            presenter = new HomePresenter(prefsRepo, modulesRepo);
-            presenter.initialize(this);
-        }
-        catch(IOException e) {
-            throw new RuntimeException(e);
-        }
+        MainActivity.instance.showToolBar();
+        presenter = new HomePresenter(MainActivity.preferences, MainActivity.modules);
+        presenter.initialize(this);
     }
 
     @Override
@@ -83,6 +72,11 @@ public class HomeScreen extends Fragment implements HomeContract.View {
     @Override
     public void displayNoModules() {
 
+    }
+
+    @Override
+    public void displaySearchScreen() {
+        MainActivity.instance.changePage(new SearchScreen());
     }
 
     private void appendCourseCard(ModulePresenter modulePresenter) {

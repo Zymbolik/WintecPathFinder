@@ -15,6 +15,8 @@ public interface HomeContract {
         void displayModules(List<Module> modules);
 
         void displayNoModules();
+
+        void displaySearchScreen();
     }
 
     interface Presenter {
