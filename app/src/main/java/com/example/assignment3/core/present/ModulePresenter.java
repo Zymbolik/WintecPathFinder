@@ -19,6 +19,14 @@ public class ModulePresenter implements ModuleContract.Presenter {
         view.displayModuleCode(module.getModuleCode());
         view.displayModuleName(module.getModuleName());
         view.displayModuleLevel(Integer.toString(module.getLevel()));
+
+        switch(module.getStatus()) {
+            case NONE: view.displayModuleStatus(""); break;
+            case PROGRESS: view.displayModuleStatus("In Progress"); break;
+            case LOCKED: view.displayModuleStatus("Locked"); break;
+            case COMPLETE: view.displayModuleStatus("Complete"); break;
+            default:
+        }
     }
 
     @Override

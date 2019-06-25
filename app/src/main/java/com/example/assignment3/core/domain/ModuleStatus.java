@@ -3,7 +3,7 @@ package com.example.assignment3.core.domain;
 public enum ModuleStatus {
 
     NONE,
-    PROGESS,
+    PROGRESS,
     LOCKED,
     COMPLETE
 }
