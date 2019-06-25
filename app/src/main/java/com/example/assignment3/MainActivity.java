@@ -6,14 +6,25 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.WindowManager;
+import android.view.View;
 
+import com.example.assignment3.android.AndroidPreferenceRepository;
+import com.example.assignment3.core.domain.SampleModulesRepository;
+import com.example.assignment3.core.domain.SelectedModules;
+import com.example.assignment3.core.repo.ModulesRepository;
+import com.example.assignment3.core.repo.PreferenceRepository;
 import com.example.assignment3.ui.SplashScreen;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
     public static MainActivity instance;
     private static Fragment current;
+
+    public static PreferenceRepository preferences;
+    public static ModulesRepository modules;
+    public static SelectedModules selected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +41,14 @@ public class MainActivity extends AppCompatActivity {
         if(instance == null)
         {
             instance = this;
-
+            preferences = new AndroidPreferenceRepository(this);
+            selected = new SelectedModules();
+            try {
+                modules = new SampleModulesRepository(getAssets().open("Modules.txt"));
+            }
+            catch(IOException e) {
+                throw new RuntimeException(e);
+            }
             //Go to the splash screen when opened
             changePage(new SplashScreen());
 
@@ -81,5 +99,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }).start();
+    }
+
+    public void hideToolBar()
+    {
+        findViewById(R.id.toolbar).setVisibility(View.INVISIBLE);
+    }
+
+    public void showToolBar()
+    {
+        findViewById(R.id.toolbar).setVisibility(View.VISIBLE);
     }
 }

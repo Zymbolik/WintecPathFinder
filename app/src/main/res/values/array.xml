@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="programmes">
+        <item>Any</item>
+        <item>NZ Certificate in IT</item>
+        <item>Diploma of IT and Tech Support</item>
+        <item>Bachelor of Applied IT</item>
+    </array>
+
+    <array name="years">
+        <item>All</item>
+        <item>Year 1</item>
+        <item>Year 2</item>
+        <item>Year 3</item>
+    </array>
+
+    <array name="specializations">
+        <item>Any</item>
+        <item>Software Engineering</item>
+        <item>Network Engineering</item>
+        <item>Web Development</item>
+        <item>Database Architecture</item>
+    </array>
+
+</resources>
