@@ -14,6 +14,8 @@ import java.util.Map;
 import java8.util.Lists;
 
 import static java.lang.Integer.parseInt;
+import static java8.util.Comparators.comparing;
+import static java8.util.Comparators.thenComparing;
 import static java8.util.stream.Collectors.toList;
 import static java8.util.stream.StreamSupport.stream;
 
@@ -29,12 +31,14 @@ public class SampleModulesRepository implements ModulesRepository {
     @Override
     public List<Module> getModules() {
         return stream(modules.values())
+                .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
                 .collect(toList());
     }
 
     @Override
     public List<Module> getProgrammeModules(String programme) {
         return stream(modules.values())
+                .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
                 .filter(module -> programme.equals(module.getProgramme()))
                 .collect(toList());
     }
@@ -42,6 +46,7 @@ public class SampleModulesRepository implements ModulesRepository {
     @Override
     public List<Module> getSpecializationModules(String specialization) {
         return stream(modules.values())
+                .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
                 .filter(module -> module.getSpecializations().isEmpty() || module.getSpecializations().contains(specialization))
                 .collect(toList());
     }
@@ -49,6 +54,7 @@ public class SampleModulesRepository implements ModulesRepository {
     @Override
     public List<Module> getYearModules(int year) {
         return stream(modules.values())
+                .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
                 .filter(module -> year == module.getYear())
                 .collect(toList());
     }
@@ -62,6 +68,7 @@ public class SampleModulesRepository implements ModulesRepository {
                 String moduleCode = data[1];
                 String[] specializations = data[5].equals("None") ? new String[0] : data[5].split("/");
                 String[] prerequisites = data[7].equals("None") ? new String[0] : data[7].split("/");
+                List<Module> resolved = resolvePrerequisites(prerequisites);
 
                 ModuleBuilder mb = new ModuleBuilder();
                 mb.setModuleName(data[0])
@@ -71,9 +78,9 @@ public class SampleModulesRepository implements ModulesRepository {
                         .setSemester(parseInt(data[4]))
                         .setSpecializations(Lists.of(specializations))
                         .setProgramme(data[6])
-                        .setPrerequisites(resolvePrerequisites(prerequisites))
+                        .setPrerequisites(resolved)
                         .setLevel(parseInt(data[8]))
-                        .setStatus(ModuleStatus.NONE);
+                        .setStatus(resolved.isEmpty() ? ModuleStatus.NONE : ModuleStatus.LOCKED);
 
                 destination.put(moduleCode, mb.build());
             }
