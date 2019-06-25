@@ -18,9 +18,9 @@ public interface ModuleContract {
 
         void collapseDetails();
 
-        void enableSelected();
+        void enableSelected(String msg);
 
-        void disableSelected();
+        void disableSelected(String msg);
     }
 
     interface Presenter {

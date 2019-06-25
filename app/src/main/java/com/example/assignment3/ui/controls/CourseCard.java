@@ -105,12 +105,12 @@ public class CourseCard extends Fragment implements ModuleContract.View {
     }
 
     @Override
-    public void enableSelected() {
-        Toast.makeText(getContext(), "Module has been added!", Toast.LENGTH_SHORT).show();
+    public void enableSelected(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void disableSelected() {
-        Toast.makeText(getContext(), "Module has been removed!", Toast.LENGTH_SHORT).show();
+    public void disableSelected(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 }
