@@ -36,6 +36,7 @@
 
 
     <ScrollView
+        android:id="@+id/hs_scroll_modules"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -53,4 +54,22 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp" />
     </ScrollView>
+
+    <Button
+        android:id="@+id/hs_btn_add_modules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/sourcesanspro_regular"
+        android:background="@null"
+        android:text="Add modules"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

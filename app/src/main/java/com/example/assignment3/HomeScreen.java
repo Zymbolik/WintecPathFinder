@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.assignment3.core.contracts.HomeContract;
@@ -26,6 +28,8 @@ public class HomeScreen extends Fragment implements HomeContract.View {
     private TextView textUsername;
     private TextView textHeading;
     private LinearLayout layoutModules;
+    private Button btnAddModules;
+    private ScrollView scrollModules;
 
     private HomeContract.Presenter presenter;
 
@@ -43,8 +47,11 @@ public class HomeScreen extends Fragment implements HomeContract.View {
         textUsername = view.findViewById(R.id.hs_title_message);
         textHeading = view.findViewById(R.id.hs_heading_message);
         layoutModules = view.findViewById(R.id.hs_modules);
+        btnAddModules = view.findViewById(R.id.hs_btn_add_modules);
+        scrollModules = view.findViewById(R.id.hs_scroll_modules);
 
         // setup ui actions.
+        btnAddModules.setOnClickListener(ignored -> presenter.onAddModules(this));
 
         // setup presenter.
         MainActivity.instance.showToolBar();
@@ -64,6 +71,9 @@ public class HomeScreen extends Fragment implements HomeContract.View {
 
     @Override
     public void displayModules(List<Module> modules) {
+        btnAddModules.setVisibility(View.INVISIBLE);
+        scrollModules.setVisibility(View.VISIBLE);
+        layoutModules.removeAllViews();
         stream(modules)
                 .map(ModulePresenter::new)
                 .forEach(this::appendCourseCard);
@@ -71,7 +81,8 @@ public class HomeScreen extends Fragment implements HomeContract.View {
 
     @Override
     public void displayNoModules() {
-
+        scrollModules.setVisibility(View.INVISIBLE);
+        btnAddModules.setVisibility(View.VISIBLE);
     }
 
     @Override

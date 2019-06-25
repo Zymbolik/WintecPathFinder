@@ -6,6 +6,7 @@ import com.example.assignment3.core.domain.Module;
 import com.example.assignment3.core.repo.ModulesRepository;
 import com.example.assignment3.core.repo.PreferenceRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java8.util.Objects.requireNonNull;
@@ -24,7 +25,7 @@ public class HomePresenter implements HomeContract.Presenter {
     public void initialize(View view) {
         String username = prefRepo.loadFirstName().orElse("Guest");
         view.displayUsername(username);
-        List<Module> modules = modulesRepo.getModules();
+        List<Module> modules = new ArrayList<>();//modulesRepo.getModules();
         if (modules.isEmpty()) {
             view.displayHeading("Looks like you have no modules");
             view.displayNoModules();
