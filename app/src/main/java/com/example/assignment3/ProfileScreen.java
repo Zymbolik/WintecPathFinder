@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.assignment3.android.AndroidPreferenceRepository;
 import com.example.assignment3.core.contracts.ProfileContract;
 import com.example.assignment3.core.contracts.ProfileContract.Presenter;
 import com.example.assignment3.core.present.ProfilePresenter;
@@ -38,7 +37,7 @@ public class ProfileScreen extends Fragment implements ProfileContract.View {
         // setup ui actions.
 
         // setup presenter.
-        PreferenceRepository repo = new AndroidPreferenceRepository(MainActivity.instance);
+        PreferenceRepository repo = MainActivity.preferences;
         presenter = new ProfilePresenter(repo);
         presenter.initialize(this);
     }

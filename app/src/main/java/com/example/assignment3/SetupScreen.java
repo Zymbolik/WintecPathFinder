@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.assignment3.android.AndroidPreferenceRepository;
 import com.example.assignment3.core.contracts.SetupContract;
 import com.example.assignment3.core.contracts.SetupContract.Presenter;
 import com.example.assignment3.core.present.SetupPresenter;
@@ -52,7 +51,7 @@ public class SetupScreen extends Fragment implements SetupContract.View {
         });
 
         // initializing presenter.
-        presenter = new SetupPresenter(new AndroidPreferenceRepository(MainActivity.instance));
+        presenter = new SetupPresenter(MainActivity.preferences);
         presenter.initialize(this);
     }
 

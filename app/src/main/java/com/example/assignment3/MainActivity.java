@@ -8,12 +8,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.assignment3.android.AndroidPreferenceRepository;
+import com.example.assignment3.core.domain.SampleModulesRepository;
+import com.example.assignment3.core.repo.ModulesRepository;
+import com.example.assignment3.core.repo.PreferenceRepository;
 import com.example.assignment3.ui.SplashScreen;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
     public static MainActivity instance;
     private static Fragment current;
+
+    public static PreferenceRepository preferences;
+    public static ModulesRepository modules;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +39,13 @@ public class MainActivity extends AppCompatActivity {
         if(instance == null)
         {
             instance = this;
-
+            preferences = new AndroidPreferenceRepository(this);
+            try {
+                modules = new SampleModulesRepository(getAssets().open("Modules.txt"));
+            }
+            catch(IOException e) {
+                throw new RuntimeException(e);
+            }
             //Go to the splash screen when opened
             changePage(new SplashScreen());
 
