@@ -15,4 +15,6 @@ public interface ModulesRepository {
     List<Module> getYearModules(int year);
 
     List<Module> getModules(int year, String programme, String specialization);
+
+    Module getModuleByCode(String moduleCode);
 }

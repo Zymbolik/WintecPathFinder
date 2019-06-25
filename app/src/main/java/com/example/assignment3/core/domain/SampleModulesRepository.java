@@ -69,6 +69,11 @@ public class SampleModulesRepository implements ModulesRepository {
                 .collect(toList());
     }
 
+    @Override
+    public Module getModuleByCode(String moduleCode) {
+        return modules.get(moduleCode);
+    }
+
     private void readFrom(InputStream source, Map<String, Module> destination) throws IOException {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(source))) {
             String line;
