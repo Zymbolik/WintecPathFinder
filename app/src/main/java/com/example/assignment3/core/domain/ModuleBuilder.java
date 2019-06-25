@@ -2,7 +2,7 @@ package com.example.assignment3.core.domain;
 
 import java.util.List;
 
-public class ModuleBuilder {
+class ModuleBuilder {
 
     private String moduleName;
     private String moduleCode;
@@ -13,55 +13,61 @@ public class ModuleBuilder {
     private List<String> specializations;
     private String programme;
     private List<Module> prerequisites;
+    private ModuleStatus status;
 
-    public ModuleBuilder() {}
+    ModuleBuilder() {}
 
-    public ModuleBuilder setModuleName(String moduleName) {
+    ModuleBuilder setModuleName(String moduleName) {
         this.moduleName = moduleName;
         return this;
     }
 
-    public ModuleBuilder setModuleCode(String moduleCode) {
+    ModuleBuilder setModuleCode(String moduleCode) {
         this.moduleCode = moduleCode;
         return this;
     }
 
-    public ModuleBuilder setLevel(int level) {
+    ModuleBuilder setLevel(int level) {
         this.level = level;
         return this;
     }
 
-    public ModuleBuilder setCredits(int credits) {
+    ModuleBuilder setCredits(int credits) {
         this.credits = credits;
         return this;
     }
 
-    public ModuleBuilder setYear(int year) {
+    ModuleBuilder setYear(int year) {
         this.year = year;
         return this;
     }
 
-    public ModuleBuilder setSemester(int semester) {
+    ModuleBuilder setSemester(int semester) {
         this.semester = semester;
         return this;
     }
 
-    public ModuleBuilder setSpecializations(List<String> specializations) {
+    ModuleBuilder setSpecializations(List<String> specializations) {
         this.specializations = specializations;
         return this;
     }
 
-    public ModuleBuilder setProgramme(String programme) {
+    ModuleBuilder setProgramme(String programme) {
         this.programme = programme;
         return this;
     }
 
-    public ModuleBuilder setPrerequisites(List<Module> prerequisites) {
+    ModuleBuilder setPrerequisites(List<Module> prerequisites) {
         this.prerequisites = prerequisites;
         return this;
     }
 
-    public Module build() {
+    ModuleBuilder setStatus(ModuleStatus status) {
+        this.status = status;
+        return this;
+    }
+
+    Module build() {
         BuiltModule module = new BuiltModule();
         module.moduleName = moduleName;
         module.moduleCode = moduleCode;
@@ -72,6 +78,7 @@ public class ModuleBuilder {
         module.specializations = specializations;
         module.programme = programme;
         module.prerequisites = prerequisites;
+        module.status = status;
         return module;
     }
 
@@ -86,6 +93,7 @@ public class ModuleBuilder {
         private List<String> specializations;
         private String programme;
         private List<Module> prerequisites;
+        private ModuleStatus status;
 
         @Override
         public String getModuleName() {
@@ -130,6 +138,11 @@ public class ModuleBuilder {
         @Override
         public List<Module> getPrerequisites() {
             return prerequisites;
+        }
+
+        @Override
+        public ModuleStatus getStatus() {
+            return status;
         }
     }
 }

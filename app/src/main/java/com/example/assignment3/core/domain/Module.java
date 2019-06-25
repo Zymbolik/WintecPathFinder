@@ -21,4 +21,6 @@ public interface Module {
     String getProgramme();
 
     List<Module> getPrerequisites();
+
+    ModuleStatus getStatus();
 }

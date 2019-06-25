@@ -72,7 +72,8 @@ public class SampleModulesRepository implements ModulesRepository {
                         .setSpecializations(Lists.of(specializations))
                         .setProgramme(data[6])
                         .setPrerequisites(resolvePrerequisites(prerequisites))
-                        .setLevel(parseInt(data[8]));
+                        .setLevel(parseInt(data[8]))
+                        .setStatus(ModuleStatus.NONE);
 
                 destination.put(moduleCode, mb.build());
             }
