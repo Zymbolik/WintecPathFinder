@@ -1,6 +1,5 @@
 package com.example.assignment3.ui;
 
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,9 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
@@ -41,6 +39,7 @@ public class SearchScreen  extends Fragment implements SearchContract.View {
 
     private ScrollView scrollResults;
     private TextView textNoResults;
+    private Button btnSearch;
 
     private SearchPresenter presenter;
 
@@ -69,37 +68,10 @@ public class SearchScreen  extends Fragment implements SearchContract.View {
         textNoResults = view.findViewById(R.id.ss_no_results);
         scrollResults = view.findViewById(R.id.ss_search_scroll);
         progressLoading = view.findViewById(R.id.ss_loading);
+        btnSearch = view.findViewById(R.id.ss_search_button);
 
         // set up ui actions.
-        spinnerProgrammes.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selected = parent.getItemAtPosition(position).toString();
-                presenter.searchByProgramme(SearchScreen.this, selected);
-            }
-
-            @Override public void onNothingSelected(AdapterView<?> parent) {}
-        });
-
-        spinnerYears.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selected = parent.getItemAtPosition(position).toString();
-                presenter.searchByYear(SearchScreen.this, selected);
-            }
-
-            @Override public void onNothingSelected(AdapterView<?> parent) {}
-        });
-
-        spinnerSpecializations.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selected = parent.getItemAtPosition(position).toString();
-                presenter.searchBySpecialization(SearchScreen.this, selected);
-            }
-
-            @Override public void onNothingSelected(AdapterView<?> parent) {}
-        });
+        btnSearch.setOnClickListener(ignored -> doSearch());
 
         // initialize presenter.
         try {
@@ -145,5 +117,12 @@ public class SearchScreen  extends Fragment implements SearchContract.View {
                 .beginTransaction()
                 .add(searchResults.getId(), card)
                 .commit();
+    }
+
+    private void doSearch() {
+        String year = spinnerYears.getSelectedItem().toString();
+        String programme = spinnerProgrammes.getSelectedItem().toString();
+        String specialization = spinnerSpecializations.getSelectedItem().toString();
+        presenter.search(this, year, programme, specialization);
     }
 }

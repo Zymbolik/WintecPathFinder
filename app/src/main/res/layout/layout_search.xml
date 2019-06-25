@@ -96,7 +96,7 @@
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ss_spec_spinner">
+        app:layout_constraintTop_toBottomOf="@+id/ss_search_button">
 
         <LinearLayout
             android:id="@+id/ss_results"

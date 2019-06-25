@@ -6,14 +6,10 @@ import com.example.assignment3.core.domain.Module;
 import com.example.assignment3.core.repo.ModulesRepository;
 
 import java.util.List;
-import java.util.concurrent.Callable;
 
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-
-import static java8.util.stream.Collectors.toList;
-import static java8.util.stream.StreamSupport.stream;
 
 public class SearchPresenter implements Presenter {
 
