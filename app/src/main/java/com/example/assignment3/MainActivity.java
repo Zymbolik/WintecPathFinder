@@ -10,7 +10,6 @@ import android.view.View;
 
 import com.example.assignment3.android.AndroidPreferenceRepository;
 import com.example.assignment3.core.domain.SampleModulesRepository;
-import com.example.assignment3.core.domain.SelectedModules;
 import com.example.assignment3.core.repo.ModulesRepository;
 import com.example.assignment3.core.repo.PreferenceRepository;
 import com.example.assignment3.ui.SplashScreen;
