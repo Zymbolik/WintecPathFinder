@@ -27,11 +27,11 @@ Scaling Networks,COMP702,15,3,5,Network Engineering,Bachelor of Applied IT,COMP6
 Principles of Software Testing,COMP707,15,3,5,Software Engineering,Bachelor of Applied IT,COMP605,7
 Game Development,COMP706,15,3,5,Software Engineering,Bachelor of Applied IT,COMP601/COMP605/MATH602,7
 Data-Warehousing and Business Intelligence,INFO704,15,3,5,Database Architecture/Software Engineering,Bachelor of Applied IT,None,7
-Database Front-End Applications,INFO706,15,3,5,Database Architecture,Bachelor of Applied IT,COMP601/COMP604/COMP709,7
 Cloud Server Databases,INFO707,15,3,5,Database Architecture,Bachelor of Applied IT,INFO601/INFO604,7
 Human Computer Interaction,INFO709,15,3,5,Web Development,Bachelor of Applied IT,None,7
 Cyber-Security,INFO702,15,3,5,Network Engineering/Web Development,Bachelor of Applied IT,COMP504/COMP601,7
 Mobile Application Development,COMP709,15,3,5,Database Architecture/Software Engineering/Web Development,Bachelor of Applied IT,COMP601/MATH601,7
+Database Front-End Applications,INFO706,15,3,5,Database Architecture,Bachelor of Applied IT,COMP601/COMP604/COMP709,7
 Web Application Development,COMP710,15,3,5,Web Development,Bachelor of Applied IT,COMP602/COMP606,7
 Business Essentials for IT Professionals,BIZM701,15,3,6,None,Bachelor of Applied IT,INFO602,7
 Connecting Networks,COMP705,15,3,6,Network Engineering,Bachelor of Applied IT,COMP702,7
