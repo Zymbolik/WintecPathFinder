@@ -8,6 +8,8 @@ import com.example.assignment3.core.repo.ModulesRepository;
 import java.util.List;
 
 import io.reactivex.Single;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class SearchPresenter implements Presenter {
 
@@ -26,16 +28,18 @@ public class SearchPresenter implements Presenter {
     public void searchByProgramme(View view, String programme) {
         view.showLoading();
         Single.fromCallable(() -> repo.getProgrammeModules(programme))
-                .subscribe(modules -> displayResults(view, modules))
-                .dispose();
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(modules -> displayResults(view, modules));
     }
 
     @Override
     public void searchBySpecialization(View view, String specialization) {
         view.showLoading();
         Single.fromCallable(() -> repo.getSpecializationModules(specialization))
-                .subscribe(modules -> displayResults(view, modules))
-                .dispose();
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(modules -> displayResults(view, modules));
     }
 
     @Override
@@ -44,8 +48,9 @@ public class SearchPresenter implements Presenter {
         String yr = year.replaceAll("\\D+", "");
         int intYear = Integer.parseInt(yr);
         Single.fromCallable(() -> repo.getYearModules(intYear))
-                .subscribe(modules -> displayResults(view, modules))
-                .dispose();
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(modules -> displayResults(view, modules));
     }
 
     /**
@@ -54,10 +59,10 @@ public class SearchPresenter implements Presenter {
      * @param results the results to display.
      */
     private void displayResults(View view, List<Module> results) {
-        view.hideLoading();
         if (results.isEmpty())
             view.displayNoResults();
         else
             view.displayResults(results);
+        view.hideLoading();
     }
 }
