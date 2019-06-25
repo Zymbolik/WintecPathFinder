@@ -2,7 +2,7 @@ package com.example.assignment3.core.domain;
 
 import java.util.List;
 
-class ModuleBuilder {
+public class ModuleBuilder {
 
     private String moduleName;
     private String moduleCode;
@@ -17,7 +17,7 @@ class ModuleBuilder {
 
     ModuleBuilder() {}
 
-    ModuleBuilder(Module module) {
+    public ModuleBuilder(Module module) {
         setModuleName(module.getModuleName())
                 .setModuleCode(module.getModuleCode())
                 .setCredits(module.getCredits())
@@ -75,12 +75,12 @@ class ModuleBuilder {
         return this;
     }
 
-    ModuleBuilder setStatus(ModuleStatus status) {
+    public ModuleBuilder setStatus(ModuleStatus status) {
         this.status = status;
         return this;
     }
 
-    Module build() {
+    public Module build() {
         BuiltModule module = new BuiltModule();
         module.moduleName = moduleName;
         module.moduleCode = moduleCode;

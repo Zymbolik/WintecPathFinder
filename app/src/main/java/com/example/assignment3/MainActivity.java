@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.example.assignment3.android.AndroidPreferenceRepository;
 import com.example.assignment3.core.domain.SampleModulesRepository;
+import com.example.assignment3.core.domain.SelectedModules;
 import com.example.assignment3.core.repo.ModulesRepository;
 import com.example.assignment3.core.repo.PreferenceRepository;
 import com.example.assignment3.ui.SplashScreen;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static PreferenceRepository preferences;
     public static ModulesRepository modules;
+    public static SelectedModules selected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         {
             instance = this;
             preferences = new AndroidPreferenceRepository(this);
+            selected = new SelectedModules();
             try {
                 modules = new SampleModulesRepository(getAssets().open("Modules.txt"));
             }

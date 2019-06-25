@@ -14,13 +14,14 @@ import android.widget.TextView;
 
 import com.example.assignment3.core.contracts.HomeContract;
 import com.example.assignment3.core.domain.Module;
+import com.example.assignment3.core.present.HomeModulePresenter;
 import com.example.assignment3.core.present.HomePresenter;
-import com.example.assignment3.core.present.ModulePresenter;
 import com.example.assignment3.ui.SearchScreen;
 import com.example.assignment3.ui.controls.CourseCard;
 
 import java.util.List;
 
+import static com.example.assignment3.MainActivity.selected;
 import static java8.util.stream.StreamSupport.stream;
 
 public class HomeScreen extends Fragment implements HomeContract.View {
@@ -55,7 +56,7 @@ public class HomeScreen extends Fragment implements HomeContract.View {
 
         // setup presenter.
         MainActivity.instance.showToolBar();
-        presenter = new HomePresenter(MainActivity.preferences, MainActivity.modules);
+        presenter = new HomePresenter(MainActivity.preferences, selected);
         presenter.initialize(this);
     }
 
@@ -75,8 +76,12 @@ public class HomeScreen extends Fragment implements HomeContract.View {
         scrollModules.setVisibility(View.VISIBLE);
         layoutModules.removeAllViews();
         stream(modules)
-                .map(ModulePresenter::new)
-                .forEach(this::appendCourseCard);
+                .map(module -> new HomeModulePresenter(module, selected))
+                .forEach(mp -> {
+                    CourseCard card = new CourseCard();
+                    card.setPresenter(mp);
+                    appendCardToLayout(card);
+                });
     }
 
     @Override
@@ -90,9 +95,7 @@ public class HomeScreen extends Fragment implements HomeContract.View {
         MainActivity.instance.changePage(new SearchScreen());
     }
 
-    private void appendCourseCard(ModulePresenter modulePresenter) {
-        CourseCard card = new CourseCard();
-        card.setPresenter(modulePresenter);
+    private void appendCardToLayout(CourseCard card) {
         getFragmentManager()
                 .beginTransaction()
                 .add(layoutModules.getId(), card)

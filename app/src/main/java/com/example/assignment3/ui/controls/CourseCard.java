@@ -19,6 +19,7 @@ import static java8.util.Optional.ofNullable;
 public class CourseCard extends Fragment implements ModuleContract.View {
 
     private boolean expanded;
+    private boolean selected;
     private TextView textModuleCode;
     private TextView textModuleName;
     private TextView textModuleLevel;
@@ -43,10 +44,20 @@ public class CourseCard extends Fragment implements ModuleContract.View {
         textModuleStatus = view.findViewById(R.id.text_course_status);
 
         // setup ui actions.
+
+        // short click to expand the card.
         view.setOnClickListener(ignored -> {
             if(expanded) presenter.onCollapseDetails(this);
             else presenter.onExpandDetails(this);
             expanded = !expanded;
+        });
+
+        // long click to select the card.
+        view.setOnLongClickListener(ignored -> {
+            selected = !selected;
+            if(selected) presenter.onSelected(this);
+            else presenter.onDeselected(this);
+            return true;
         });
 
         ofNullable(presenter).ifPresent(p -> p.initialize(this));
@@ -91,5 +102,15 @@ public class CourseCard extends Fragment implements ModuleContract.View {
     @Override
     public void collapseDetails() {
         Toast.makeText(getContext(), "Collapsing details", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void enableSelected() {
+        Toast.makeText(getContext(), "Module has been added!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void disableSelected() {
+        Toast.makeText(getContext(), "Module has been removed!", Toast.LENGTH_SHORT).show();
     }
 }

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +16,12 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.assignment3.MainActivity;
 import com.example.assignment3.R;
 import com.example.assignment3.core.contracts.SearchContract;
 import com.example.assignment3.core.domain.Module;
 import com.example.assignment3.core.domain.SampleModulesRepository;
-import com.example.assignment3.core.present.ModulePresenter;
+import com.example.assignment3.core.present.SearchModulePresenter;
 import com.example.assignment3.core.present.SearchPresenter;
 import com.example.assignment3.ui.controls.CourseCard;
 
@@ -93,7 +93,7 @@ public class SearchScreen  extends Fragment implements SearchContract.View {
         searchResults.removeAllViews();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         stream(modules)
-                .map(ModulePresenter::new)
+                .map(module -> new SearchModulePresenter(module, MainActivity.selected))
                 .forEach(mp -> {
                     CourseCard card = new CourseCard();
                     card.setPresenter(mp);

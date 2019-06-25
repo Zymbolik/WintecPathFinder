@@ -17,11 +17,19 @@ public interface ModuleContract {
         void expandDetails();
 
         void collapseDetails();
+
+        void enableSelected();
+
+        void disableSelected();
     }
 
     interface Presenter {
 
         void initialize(View view);
+
+        void onSelected(View view);
+
+        void onDeselected(View view);
 
         void onExpandDetails(View view);
 

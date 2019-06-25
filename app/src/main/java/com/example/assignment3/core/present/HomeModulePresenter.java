@@ -3,15 +3,18 @@ package com.example.assignment3.core.present;
 import com.example.assignment3.core.contracts.ModuleContract;
 import com.example.assignment3.core.contracts.ModuleContract.View;
 import com.example.assignment3.core.domain.Module;
+import com.example.assignment3.core.domain.SelectedModules;
 
 import static java8.util.Objects.requireNonNull;
 
-public class ModulePresenter implements ModuleContract.Presenter {
+public class HomeModulePresenter implements ModuleContract.Presenter {
 
     private Module module;
+    private SelectedModules selected;
 
-    public ModulePresenter(Module module) {
+    public HomeModulePresenter(Module module, SelectedModules selected) {
         this.module = requireNonNull(module);
+        this.selected = requireNonNull(selected);
     }
 
     @Override
@@ -30,6 +33,16 @@ public class ModulePresenter implements ModuleContract.Presenter {
     }
 
     @Override
+    public void onSelected(View view) {
+        selected.completeModule(module);
+        view.enableSelected();
+    }
+
+    @Override
+    public void onDeselected(View view) {
+    }
+
+    @Override
     public void onExpandDetails(View view) {
         view.expandDetails();
     }
@@ -39,3 +52,4 @@ public class ModulePresenter implements ModuleContract.Presenter {
         view.collapseDetails();
     }
 }
+
