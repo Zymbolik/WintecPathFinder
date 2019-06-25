@@ -17,6 +17,19 @@ class ModuleBuilder {
 
     ModuleBuilder() {}
 
+    ModuleBuilder(Module module) {
+        setModuleName(module.getModuleName())
+                .setModuleCode(module.getModuleCode())
+                .setCredits(module.getCredits())
+                .setLevel(module.getLevel())
+                .setSemester(module.getSemester())
+                .setYear(module.getYear())
+                .setStatus(module.getStatus())
+                .setSpecializations(module.getSpecializations())
+                .setProgramme(module.getProgramme())
+                .setPrerequisites(module.getPrerequisites());
+    }
+
     ModuleBuilder setModuleName(String moduleName) {
         this.moduleName = moduleName;
         return this;
