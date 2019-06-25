@@ -24,16 +24,18 @@ public class SetupPresenter implements Presenter {
 
     @Override
     public void onFirstNameCheck(View view, String firstName) {
-        if(firstName == null || firstName.isEmpty())
-            view.disableSubmit();
-        else
+        if(firstName != null && !firstName.trim().isEmpty())
             view.enableSubmit();
+        else
+            view.disableSubmit();
     }
 
     @Override
     public void onSubmit(View view, String firstName, String lastName) {
-        preference.saveFirstName(firstName);
-        preference.saveLastName(lastName);
+        if(firstName != null && !firstName.trim().isEmpty()) {
+            preference.saveFirstName(firstName);
+            preference.saveLastName(lastName);
+        }
         view.displayHomeScreen();
     }
 }
