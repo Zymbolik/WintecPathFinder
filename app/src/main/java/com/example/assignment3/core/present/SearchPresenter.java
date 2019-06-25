@@ -6,10 +6,14 @@ import com.example.assignment3.core.domain.Module;
 import com.example.assignment3.core.repo.ModulesRepository;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+
+import static java8.util.stream.Collectors.toList;
+import static java8.util.stream.StreamSupport.stream;
 
 public class SearchPresenter implements Presenter {
 
@@ -21,7 +25,8 @@ public class SearchPresenter implements Presenter {
 
     @Override
     public void initialize(View view) {
-
+        view.hideLoading();
+        view.displayNoResults();
     }
 
     @Override
@@ -48,6 +53,18 @@ public class SearchPresenter implements Presenter {
         String yr = year.replaceAll("\\D+", "");
         int intYear = Integer.parseInt(yr);
         Single.fromCallable(() -> repo.getYearModules(intYear))
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(modules -> displayResults(view, modules));
+    }
+
+    @Override
+    public void search(View view, String year, String programme, String specialization) {
+        view.showLoading();
+        String yr = year.replaceAll("\\D+", "");
+        int intYear = Integer.parseInt(yr);
+
+        Single.fromCallable(() -> repo.getModules(intYear, programme, specialization))
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(modules -> displayResults(view, modules));

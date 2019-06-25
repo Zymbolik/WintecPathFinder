@@ -38,24 +38,34 @@ public class SampleModulesRepository implements ModulesRepository {
     @Override
     public List<Module> getProgrammeModules(String programme) {
         return stream(modules.values())
+                .filter(m -> programme.equals(m.getProgramme()))
                 .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
-                .filter(module -> programme.equals(module.getProgramme()))
                 .collect(toList());
     }
 
     @Override
     public List<Module> getSpecializationModules(String specialization) {
         return stream(modules.values())
+                .filter(m -> m.getSpecializations().isEmpty() || m.getSpecializations().contains(specialization))
                 .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
-                .filter(module -> module.getSpecializations().isEmpty() || module.getSpecializations().contains(specialization))
                 .collect(toList());
     }
 
     @Override
     public List<Module> getYearModules(int year) {
         return stream(modules.values())
-                .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
                 .filter(module -> year == module.getYear())
+                .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
+                .collect(toList());
+    }
+
+    @Override
+    public List<Module> getModules(int year, String programme, String specialization) {
+        return stream(modules.values())
+                .filter(m -> m.getYear() == year)
+                .filter(m -> m.getProgramme().equals(programme))
+                .filter(m -> m.getSpecializations().isEmpty() || m.getSpecializations().contains(specialization))
+                .sorted(thenComparing(comparing(Module::getLevel), comparing(Module::getModuleCode)))
                 .collect(toList());
     }
 

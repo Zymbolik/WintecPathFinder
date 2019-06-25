@@ -13,4 +13,6 @@ public interface ModulesRepository {
     List<Module> getSpecializationModules(String specialization);
 
     List<Module> getYearModules(int year);
+
+    List<Module> getModules(int year, String programme, String specialization);
 }

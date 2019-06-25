@@ -26,5 +26,7 @@ public interface SearchContract {
         void searchBySpecialization(View view, String specialization);
 
         void searchByYear(View view, String year);
+
+        void search(View view, String year, String programme, String specialization);
     }
 }
