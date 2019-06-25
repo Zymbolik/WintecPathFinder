@@ -47,16 +47,16 @@ public class CourseCard extends Fragment implements ModuleContract.View {
 
         // short click to expand the card.
         view.setOnClickListener(ignored -> {
-            if(expanded) presenter.onCollapseDetails(this);
-            else presenter.onExpandDetails(this);
-            expanded = !expanded;
+            selected = !selected;
+            if(selected) presenter.onSelected(this);
+            else presenter.onDeselected(this);
         });
 
         // long click to select the card.
         view.setOnLongClickListener(ignored -> {
-            selected = !selected;
-            if(selected) presenter.onSelected(this);
-            else presenter.onDeselected(this);
+            if(expanded) presenter.onCollapseDetails(this);
+            else presenter.onExpandDetails(this);
+            expanded = !expanded;
             return true;
         });
 
